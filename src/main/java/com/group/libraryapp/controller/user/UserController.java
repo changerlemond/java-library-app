@@ -3,8 +3,9 @@ package com.group.libraryapp.controller.user;
 import com.group.libraryapp.dto.user.request.UserCreateRequest;
 import com.group.libraryapp.dto.user.request.UserUpdateRequest;
 import com.group.libraryapp.dto.user.response.UserResponse;
+import com.group.libraryapp.service.fruit.FruitService;
 import com.group.libraryapp.service.user.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,10 +15,14 @@ public class UserController {
 
     private final UserService userService;
 
+    private final FruitService fruitService;
+
 //    스프링 빈을 주입 받는 방법
 //    1. 생성자 사용 (스프링 버전이 업데이트 되면서 @Autowired 생략 가능)
-    public UserController(UserService userService) {
+    public UserController(UserService userService,
+                          @Qualifier("main") FruitService fruitService) {
         this.userService = userService;
+        this.fruitService = fruitService;
     }
 
 //    2. setter 사용 (누군가 setter를 사용하면 오작동할 수 있다.)
