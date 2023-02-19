@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.7.6'
 	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.example'
@@ -19,6 +20,7 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
 }
 
 tasks.named('test') {
