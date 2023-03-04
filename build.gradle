@@ -18,6 +18,8 @@ dependencies {
 	// implementation: 해당 의존성을 항시 사용한다.
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	// runtimeOnly: 코드를 실행할 때에만 의존성을 사용한다.
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
